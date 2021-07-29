@@ -3,6 +3,8 @@
 
 @import url('../css/sidebar.css');
 
+@import url('../../wal/colors.css');
+
 :root {
 	--ubuntu: 'Ubuntu', sans-serif;
 	--roboto: 'Roboto', sans-serif;
