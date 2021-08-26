@@ -3,7 +3,7 @@
 
 @import url('../css/sidebar.css');
 
-@import url('../../wal/colors.css');
+@import url('../wal/colors.css');
 
 :root {
 	--ubuntu: 'Ubuntu', sans-serif;
@@ -53,13 +53,58 @@ body {
 	grid-template-rows: 1fr auto 1fr;
 }
 
+@keyframes row-out {
+	from {
+		transform: translateY(0px);
+		opacity: 100;
+		order: 1;
+	}
+	99% {
+		order: 2;
+	}
+	to {
+		transform: translateY(-10px); 
+		opacity: 0;
+		order: 2;
+	}
+}  
+
+@keyframes row-in {
+	from {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-10px); 
+	}
+	to {
+		transform: translateY(0px);
+	}
+}  
+
 .main {
+	display: flex;
+	flex-direction: column;
+}
+
+.item-row {
+	animation-name: row-in;
+	animation-duration: 200ms;
+	animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+	animation-delay: 0ms;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: row;
 	flex-wrap: wrap;
 	z-index: 1;
+	order: 1;
+}
+
+.item-row:not(.active-row) { 
+	display: none;
+	animation-duration: 200ms;
+	animation-delay: 200ms;
+	order: 2;
 }
 
 a {
