@@ -33,14 +33,20 @@ document.onkeydown = e => {
     }
 
     if (e.key === 'ArrowUp') {
-        document.getElementById(rows[index]).classList.remove('active-row')
-        document.getElementById(rows[nextIndex()]).classList.add('active-row')
+        document.getElementById(rows[index]).classList.remove('active-row');
+        document.getElementById(rows[nextIndex()]).classList.add('active-row');
+
     } else if (e.key === 'ArrowDown') {
-        document.getElementById(rows[index]).classList.remove('active-row')
-        document.getElementById(rows[lastIndex()]).classList.add('active-row')
+        document.getElementById(rows[index]).classList.remove('active-row');
+        document.getElementById(rows[lastIndex()]).classList.add('active-row');
     }
 
-    let code = parseInt(e.key)
+    const foodbox = document.getElementById('food-box');
+
+    if (rows[index] === 'study-row') foodbox.classList.remove('hidden');
+    else foodbox.classList.add('hidden');
+
+    let code = parseInt(e.key);
 
     if (code !== NaN && 
         code >= 1 && 
@@ -48,8 +54,8 @@ document.onkeydown = e => {
         !e.ctrlKey
         ) {
 
-            let items = document.querySelectorAll('.active-row > a')
-            items[code-1].click()
+            let items = document.querySelectorAll('.active-row > a');
+            items[code-1].click();
 
     } 
     
