@@ -162,9 +162,15 @@ a {
 	z-index: -1;
 }
 
-.header__weather,
+
 .header__greeting {
-	margin-bottom: 25px;
+	margin-bottom: 5px;
+	transition: opacity .5s ease;
+}
+
+.header__weather {
+	margin-bottom: 15px;
+	padding-bottom: 10px;
 	transition: opacity .5s ease;
 }
 
