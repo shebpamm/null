@@ -1,6 +1,7 @@
 const rows = [
     "base-row",
-    "study-row"
+    "study-row",
+    "admin-row"
 ];
 
 let index = 0;
