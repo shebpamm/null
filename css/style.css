@@ -50,6 +50,18 @@ body {
 	transition: all .5s, background-color .8s;
 }
 
+.fadein {
+    opacity: 0;
+    -moz-transition: opacity 0.5s;
+    -webkit-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+}
+
+body.loaded.fadein {
+    opacity: 1;
+}
+
 .container {
 	display: block;
 	width: min-content;
@@ -156,7 +168,7 @@ a {
 	
 }
 
-:not(.hidden) {
+#food-box:not(.hidden) {
 	animation-name: row-in;
 	animation-duration: 200ms;
 	animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
