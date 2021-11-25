@@ -65,6 +65,7 @@ body.loaded.fadein {
 .container {
 	display: block;
 	width: min-content;
+	min-width: 600px;
 	/* grid-template-rows: 1fr auto 1fr; */
 }
 
